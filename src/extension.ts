@@ -1,4 +1,3 @@
-'use strict';
 import * as vscode from 'vscode';
 import * as commands from './commands';
 import { updateLeftRight } from './brackets'

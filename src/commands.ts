@@ -1,4 +1,3 @@
-'use strict';
 import * as vs from 'vscode';
 import * as brackets from './brackets';
 

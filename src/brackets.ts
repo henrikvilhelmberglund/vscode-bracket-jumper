@@ -1,4 +1,3 @@
-'use strict';
 import * as vs from 'vscode'
 
 let LEFT = vs.workspace.getConfiguration('bracket-jumper').get<string[]>('openingBrackets')
@@ -13,7 +12,7 @@ let RIGHT = vs.workspace.getConfiguration('bracket-jumper').get<string[]>('closi
 function charAtPos(document: vs.TextDocument, pos: vs.Position): string {
     let line = document.lineAt(pos).text
     let ind = pos.character
-    return line.substr(ind, 1)
+    return line.substring(ind, 1)
 }
 
 /**
