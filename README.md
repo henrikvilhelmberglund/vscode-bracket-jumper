@@ -1,3 +1,5 @@
+This is a fork of Bracket Jumper modified to jump into (to the right/left of) brackets instead of to (to the left/right of) them. Original readme below.
+
 # bracket-jumper
 Navigate by jumping from bracket to bracket!
 
