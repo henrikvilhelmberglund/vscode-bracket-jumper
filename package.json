@@ -1,25 +1,15 @@
 {
-    "name": "bracket-jumper",
-    "displayName": "Bracket Jumper",
-    "description": "Bracket-based editor navigation and text selection",
-    "version": "1.1.8",
-    "publisher": "sashaweiss",
+    "name": "bracket-jumper-henrikvilhelmberglund",
+    "displayName": "Bracket Jumper (fork)",
+    "description": "Bracket-based editor navigation and text selection (fork)",
+    "version": "0.0.0",
+    "publisher": "henrikvilhelmberglund",
     "license": "MIT",
     "engines": {
-        "vscode": "^1.10.0"
+        "vscode": "^1.74.0"
     },
     "categories": [
         "Other"
-    ],
-    "activationEvents": [
-        "onCommand:bracket-jumper.jumpLeft",
-        "onCommand:bracket-jumper.jumpRight",
-        "onCommand:bracket-jumper.selectLeft",
-        "onCommand:bracket-jumper.selectRight",
-        "onCommand:bracket-jumper.ascendLeft",
-        "onCommand:bracket-jumper.ascendRight",
-        "onCommand:bracket-jumper.selectAscendLeft",
-        "onCommand:bracket-jumper.selectAscendRight"
     ],
     "main": "./out/src/extension",
     "contributes": {
@@ -134,22 +124,20 @@
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
         "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
+        "@types/node": "^20.9.0",
+        "@types/vscode": "^1.84.1",
+        "typescript": "^5.2.2",
+        "vscode-test": "^1.6.1"
     },
     "bugs": {
-        "url": "https://github.com/sashaweiss/vscode-bracket-jumper/issues"
+        "url": "https://github.com/henrikvilhelmberglund/vscode-bracket-jumper/issues"
     },
-    "homepage": "https://github.com/sashaweiss/vscode-bracket-jumper/blob/master/README.md",
+    "homepage": "https://github.com/henrikvilhelmberglund/vscode-bracket-jumper/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/sashaweiss/vscode-bracket-jumper"
+        "url": "https://github.com/henrikvilhelmberglund/vscode-bracket-jumper"
     }
 }
