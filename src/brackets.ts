@@ -12,7 +12,7 @@ let RIGHT = vs.workspace.getConfiguration('bracket-jumper').get<string[]>('closi
 function charAtPos(document: vs.TextDocument, pos: vs.Position): string {
     let line = document.lineAt(pos).text
     let ind = pos.character
-    return line.substring(ind, 1)
+    return line.substring(ind, ind + 1)
 }
 
 /**
