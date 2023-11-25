@@ -125,6 +125,9 @@
     "vscode:prepublish": "tsc -p ./",
     "compile": "tsc -watch -p ./",
     "test": "vscode-test",
+    "publish": "vsce publish",
+    "release": "commit-and-tag-version",
+    "postrelease": "git push --follow-tags origin master",
     "package": "vsce package -o dist/myext.vsix",
     "local": "nr package && code --install-extension dist/myext.vsix --force"
   },
@@ -133,6 +136,7 @@
     "@types/vscode": "^1.84.1",
     "@vscode/test-cli": "^0.0.4",
     "@vscode/test-electron": "^2.3.8",
+    "commit-and-tag-version": "^12.0.0",
     "typescript": "^5.2.2",
     "vscode-test": "^1.6.1"
   },
