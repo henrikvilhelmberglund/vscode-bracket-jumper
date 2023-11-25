@@ -13,7 +13,7 @@ let RIGHT = vs.workspace
  * @param pos the position to get at
  * @param dir the direction to get in
  */
-function charAtPos(document: vs.TextDocument, pos: vs.Position): string {
+export function charAtPos(document: vs.TextDocument, pos: vs.Position): string {
   let line = document.lineAt(pos).text;
   let ind = pos.character;
   return line.substring(ind, ind + 1);
@@ -25,7 +25,7 @@ function charAtPos(document: vs.TextDocument, pos: vs.Position): string {
  * @param pos the position to move from
  * @returns the position one step left, or null if last
  */
-function posLeft(
+export function posLeft(
   document: vs.TextDocument,
   pos: vs.Position
 ): vs.Position | null {
@@ -39,7 +39,7 @@ function posLeft(
  * @param pos the position to move from
  * @returns the position one step right, or null if first
  */
-function posRight(
+export function posRight(
   document: vs.TextDocument,
   pos: vs.Position
 ): vs.Position | null {
@@ -77,9 +77,9 @@ export function unmatchedBracketInDir(
   }
 
   // Pesky edge case jumping left when prev char is a left bracket, skips it otherwise
-  if (dir == "left" && LEFT.indexOf(charAtPos(doc, posLeft(doc, pos))) != -1) {
-    return posLeft(doc, pos);
-  }
+  // if (dir == "left" && LEFT.indexOf(charAtPos(doc, posLeft(doc, pos))) != -1) {
+  //   return posLeft(doc, pos);
+  // }
 
   // Skip examining current char if going left, otherwise gets stuck
   let pAdj = dir == "left" ? posLeft(doc, pos) : pos;
@@ -103,7 +103,7 @@ export function unmatchedBracketInDir(
       } else {
         return dir == "left"
           ? pAdj
-          : new vs.Position(pAdj.line, pAdj.character + 1); // Put us on the outside always
+          : new vs.Position(pAdj.line, pAdj.character + 0); // Put us on the outside always
       }
     }
   }
@@ -135,9 +135,9 @@ export function bracketInDir(
   }
 
   // Pesky edge case jumping left when prev char is a left bracket, skips it otherwise
-  if (dir == "left" && LEFT.indexOf(charAtPos(doc, posLeft(doc, pos))) != -1) {
-    return posLeft(doc, pos);
-  }
+  // if (dir == "left" && LEFT.indexOf(charAtPos(doc, posLeft(doc, pos))) != -1) {
+  //   return posLeft(doc, pos);
+  // }
 
   // Skip examining current char if going left, otherwise gets stuck
   let pAdj = dir == "left" ? posLeft(doc, pos) : pos;
@@ -148,7 +148,7 @@ export function bracketInDir(
     if (LEFT.indexOf(char) != -1) {
       return pAdj;
     } else if (RIGHT.indexOf(char) != -1) {
-      return new vs.Position(pAdj.line, pAdj.character + 1);
+      return new vs.Position(pAdj.line, pAdj.character + 0);
     }
   }
   return null;
