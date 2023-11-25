@@ -1,143 +1,147 @@
 {
-    "name": "bracket-jumper-henrikvilhelmberglund",
-    "displayName": "Bracket Jumper (fork)",
-    "description": "Bracket-based editor navigation and text selection (fork)",
-    "version": "0.0.0",
-    "publisher": "henrikvilhelmberglund",
-    "license": "MIT",
-    "engines": {
-        "vscode": "^1.74.0"
-    },
-    "categories": [
-        "Other"
+  "name": "bracket-jumper-henrikvilhelmberglund",
+  "displayName": "Bracket Jumper (fork)",
+  "description": "Bracket-based editor navigation and text selection (fork)",
+  "version": "0.0.0",
+  "publisher": "henrikvilhelmberglund",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "bracket-jumper.jumpLeft",
+        "title": "Jump to next-left bracket"
+      },
+      {
+        "command": "bracket-jumper.jumpRight",
+        "title": "Jump to next-right bracket"
+      },
+      {
+        "command": "bracket-jumper.selectLeft",
+        "title": "Select to next-left bracket"
+      },
+      {
+        "command": "bracket-jumper.selectRight",
+        "title": "Select to next-right bracket"
+      },
+      {
+        "command": "bracket-jumper.ascendLeft",
+        "title": "Jump to nearest left bracket at same or higher scope"
+      },
+      {
+        "command": "bracket-jumper.selectAscendLeft",
+        "title": "Select to the nearest left bracket at the same or higher scope"
+      },
+      {
+        "command": "bracket-jumper.ascendRight",
+        "title": "Jump to the nearest right bracket at the same or higher scope"
+      },
+      {
+        "command": "bracket-jumper.selectAscendRight",
+        "title": "Select to the nearest right bracket at the same of higher scope"
+      }
     ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "bracket-jumper.jumpLeft",
-                "title": "Jump to next-left bracket"
-            },
-            {
-                "command": "bracket-jumper.jumpRight",
-                "title": "Jump to next-right bracket"
-            },
-            {
-                "command": "bracket-jumper.selectLeft",
-                "title": "Select to next-left bracket"
-            },
-            {
-                "command": "bracket-jumper.selectRight",
-                "title": "Select to next-right bracket"
-            },
-            {
-                "command": "bracket-jumper.ascendLeft",
-                "title": "Jump to nearest left bracket at same or higher scope"
-            },
-            {
-                "command": "bracket-jumper.selectAscendLeft",
-                "title": "Select to the nearest left bracket at the same or higher scope"
-            },
-            {
-                "command": "bracket-jumper.ascendRight",
-                "title": "Jump to the nearest right bracket at the same or higher scope"
-            },
-            {
-                "command": "bracket-jumper.selectAscendRight",
-                "title": "Select to the nearest right bracket at the same of higher scope"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "bracket-jumper.jumpLeft",
-                "key": "ctrl+alt+left",
-                "mac": "ctrl+left",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "bracket-jumper.jumpRight",
-                "key": "ctrl+alt+right",
-                "mac": "ctrl+right",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "bracket-jumper.selectLeft",
-                "key": "ctrl+alt+shift+left",
-                "mac": "ctrl+shift+left",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "bracket-jumper.selectRight",
-                "key": "ctrl+alt+shift+right",
-                "mac": "ctrl+shift+right",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "bracket-jumper.ascendLeft",
-                "key": "ctrl+alt+up",
-                "mac": "ctrl+up",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "bracket-jumper.selectAscendLeft",
-                "key": "ctrl+alt+shift+up",
-                "mac": "ctrl+shift+up",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "bracket-jumper.ascendRight",
-                "key": "ctrl+alt+down",
-                "mac": "ctrl+down",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "bracket-jumper.selectAscendRight",
-                "key": "ctrl+alt+shift+down",
-                "mac": "ctrl+shift+down",
-                "when": "editorTextFocus"
-            }
-        ],
-        "configuration": {
-            "title": "Bracket Jumper configuration",
-            "properties": {
-                "bracket-jumper.openingBrackets": {
-                    "type": "array",
-                    "default": [
-                        "{",
-                        "[",
-                        "("
-                    ],
-                    "description": "Characters to be recognized as opening brackets. MUST have a pair in closingBrackets."
-                },
-                "bracket-jumper.closingBrackets": {
-                    "type": "array",
-                    "default": [
-                        "}",
-                        "]",
-                        ")"
-                    ],
-                    "description": "Characters to be recognized as closing brackets. MUST have a pair in openingBrackets."
-                }
-            }
+    "keybindings": [
+      {
+        "command": "bracket-jumper.jumpLeft",
+        "key": "ctrl+alt+left",
+        "mac": "ctrl+left",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "bracket-jumper.jumpRight",
+        "key": "ctrl+alt+right",
+        "mac": "ctrl+right",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "bracket-jumper.selectLeft",
+        "key": "ctrl+alt+shift+left",
+        "mac": "ctrl+shift+left",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "bracket-jumper.selectRight",
+        "key": "ctrl+alt+shift+right",
+        "mac": "ctrl+shift+right",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "bracket-jumper.ascendLeft",
+        "key": "ctrl+alt+up",
+        "mac": "ctrl+up",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "bracket-jumper.selectAscendLeft",
+        "key": "ctrl+alt+shift+up",
+        "mac": "ctrl+shift+up",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "bracket-jumper.ascendRight",
+        "key": "ctrl+alt+down",
+        "mac": "ctrl+down",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "bracket-jumper.selectAscendRight",
+        "key": "ctrl+alt+shift+down",
+        "mac": "ctrl+shift+down",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Bracket Jumper configuration",
+      "properties": {
+        "bracket-jumper.openingBrackets": {
+          "type": "array",
+          "default": [
+            "{",
+            "[",
+            "("
+          ],
+          "description": "Characters to be recognized as opening brackets. MUST have a pair in closingBrackets."
+        },
+        "bracket-jumper.closingBrackets": {
+          "type": "array",
+          "default": [
+            "}",
+            "]",
+            ")"
+          ],
+          "description": "Characters to be recognized as closing brackets. MUST have a pair in openingBrackets."
         }
-    },
-    "scripts": {
-        "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "@types/node": "^20.9.0",
-        "@types/vscode": "^1.84.1",
-        "typescript": "^5.2.2",
-        "vscode-test": "^1.6.1"
-    },
-    "bugs": {
-        "url": "https://github.com/henrikvilhelmberglund/vscode-bracket-jumper/issues"
-    },
-    "homepage": "https://github.com/henrikvilhelmberglund/vscode-bracket-jumper/blob/master/README.md",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/henrikvilhelmberglund/vscode-bracket-jumper"
+      }
     }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "test": "vscode-test",
+    "package": "vsce package -o dist/myext.vsix",
+    "local": "nr package && code --install-extension dist/myext.vsix --force"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "@types/vscode": "^1.84.1",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "typescript": "^5.2.2",
+    "vscode-test": "^1.6.1"
+  },
+  "bugs": {
+    "url": "https://github.com/henrikvilhelmberglund/vscode-bracket-jumper/issues"
+  },
+  "homepage": "https://github.com/henrikvilhelmberglund/vscode-bracket-jumper/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henrikvilhelmberglund/vscode-bracket-jumper"
+  }
 }
